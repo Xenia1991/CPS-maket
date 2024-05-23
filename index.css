@@ -59,6 +59,12 @@ body {
     display: none;
 }
 
+.menu-item__image {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
 .main-info {
     background-color: #F8F8F8;
 }
@@ -144,6 +150,7 @@ body {
     margin-left: 16px;
     border: none;
     background-color: #F8F8F8;
+    cursor: pointer;
 }
 
 .button__image {
