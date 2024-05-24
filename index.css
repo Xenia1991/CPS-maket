@@ -370,6 +370,9 @@ body {
 
     .menu-item {
         text-decoration: none;
+        display: flex;
+        width: 180px;
+        cursor: pointer;
     }
 
     .menu-item--hidden-for-width1120 {
@@ -400,8 +403,24 @@ body {
         font-style: normal;
     }
 
-    .menu-item--repair-width-1120 {
-        
+    .menu-item--repair {
+        background-image: none;
+    }
+
+    .menu-item__image--repair-width-1120 {
+        background-image: url("images/repair.png");
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-item--checkstatus {
+        background-image: none;
+    }
+
+    .menu-item__image--checkstatus-width-1120 {
+        background-image: url("images/checkstatus.png");
+        width: 40px;
+        height: 40px;
     }
 
     .menu-item__image--hidden {
