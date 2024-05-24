@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'TTLakes';
-    src: url('font/') format('woff'),
+    src: url('font/TTLakes-Medium.woff') format('woff'),
     url('font/TTLakes-Medium.ttf') format('truetype'),
     url('font/TTLakes-Medium.eot') format('embeddedopentype');
     font-weight: 400;
@@ -25,19 +25,39 @@ body {
 }
 
 .page-container {
-    width: 320px;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu {
+    overflow: hidden;
+}
+
+.menu::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color:  #D9FFF5;
 }
 
 .menu-block {
     min-width: 320px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 17px;
     padding-left: 5px;
     padding-right: 5px;
-    box-sizing: border-box;
+}
+
+.menu-division {
+    display: flex;
+    justify-content: space-around;
+    gap: 16px;
+    padding: 5px;
 }
 
 .menu-item {
@@ -80,7 +100,6 @@ body {
     width: 2px;
     height: 32px;
     background-color: #EAEAEA;
-    border: 1px solid #EAEAEA;
     border-radius: 1px;
 }
 
@@ -109,10 +128,11 @@ body {
 
 .main-info {
     background-color: #F8F8F8;
+    width: 100%;
 }
 
 .title {
-    width: 302px;
+    width: 100%;
     height: 40px;
     display: flex;
     flex-wrap: nowrap;
@@ -120,10 +140,13 @@ body {
     padding-top: 24px;
 }
 
-.title__highlight {
+.title::before {
+    content: "";
     width: 4px;
     height: 40px;
     background-color: #41F6D7;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 
 .title__text {
@@ -136,6 +159,8 @@ body {
     line-height: 40px;
     margin: 0;
     margin-left: 12px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .title--hidden {
@@ -143,16 +168,19 @@ body {
 }
 
 .nav {
-    width: 320px;
+    width: 100%;
     padding: 0;
     display: flex;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .nav-item {
-    display: block;
-    height: 40px;
-    margin-left: 18px;
+    height: auto;
+    margin: 0;
+    margin-left: 16px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
 }
 
 .nav-item__text {
@@ -160,7 +188,7 @@ body {
     text-decoration: none;
     font-size: 16px;
     color: #7E7E82;
-    padding: 6px;
+    padding: 5px;
     text-wrap: nowrap;
 }
 
@@ -170,26 +198,27 @@ body {
 }
 
 .description-block {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0;
     padding: 0;
 }
 
 .text {
-    width: 288px;
-    height: 110px;
-    margin-bottom: 16px;
-    margin-left: 16px;
+    width: 100%;
+    padding: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
     font-size: 14px;
     font-weight: 400;
     color: #1B1C21; 
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .button {
     display: flex;
-    margin-left: 16px;
+    padding-left: 16px;
     border: none;
     background-color: #F8F8F8;
     cursor: pointer;
@@ -211,35 +240,34 @@ body {
 }
 
 .image {
-    width: 320px;
-    height: 230px;
-    margin-top: 13px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 13px;
+    box-sizing: border-box;
+}
+
+.image__content-image {
+    width: 100%;
+    height: 100%;
 }
 
 @media (min-width: 768px) {
 
     .page-container {
-        width: 768px;
-        margin: 0 auto;
+        width: 100%;
     }
 
     .menu-block {
         width: 100%;
-        height: 88px;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
+        box-sizing: border-box;
     }
 
     .menu-item--hidden {
         display: block;
-    }
-
-    .menu-item:nth-child(1) {
-        margin-left: 24px;
-    }
-
-    .menu-item:nth-child(4) {
-        margin-left: 250px;
     }
 
     .title--hidden {
@@ -247,12 +275,12 @@ body {
     }
 
     .main-info {
-        width: 768px;
-        height: 416px;
+        width: 100%;
+        height: auto;
     }
 
     .nav {
-        width: 768px;
+        width: 100%;
         justify-content: flex-start;
         gap: 17px;
         margin-top: 40px;
@@ -285,17 +313,14 @@ body {
     }
     
     .text {
-        width: 312px;
-        height: 150px;
+        width: 100%;
         font-size: 14px;
         line-height: 20px;
         font-weight: 400;
     }
 
     .button {
-        margin: 0;
         margin-top: 10px;
-        padding: 0;
     }
 
     .image {
@@ -310,12 +335,11 @@ body {
 
 @media (min-width: 1120px) {
     body {
-        height: 535px;
         background-color: #F8F8F8;
     }
 
     .page-container {
-        width: 1120px;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -328,6 +352,11 @@ body {
         display: flex;
         flex-direction: row;
         vertical-align: middle;
+        justify-content: space-between;
+    }
+
+    .menu::after {
+        display: none;
     }
 
     .title--hidden {
@@ -339,31 +368,40 @@ body {
         padding-top: 24px;
     }
 
+    .menu-item {
+        text-decoration: none;
+    }
+
     .menu-item--hidden-for-width1120 {
         display: none;
     }
 
     .menu-item--visible-for-width1120 {
         display: flex;
+        justify-content: flex-start;
         width: 190px;
         height: 40px;
-        margin-right: 15px;
+        margin-right: 16px;
     }
 
-    .menu-item__image {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: #1B1C21;
-    }
     .menu-item:nth-child(8) {
         margin-left: 400px;
     }
 
     .menu-item__text--hidden {
-        display: inline-block;
+        display: inline;
         text-decoration: none;
         margin-right: 8px;
+        height: 40px;
+        white-space: nowrap;
+        padding-top: 8px;
+        color: #1B1C21;
+        font-family: "TTLakes", "Arial", serif;
+        font-style: normal;
+    }
+
+    .menu-item--repair-width-1120 {
+        
     }
 
     .menu-item__image--hidden {
@@ -371,7 +409,7 @@ body {
     }
 
     .nav {
-        width: 1120px;
+        width: 100%;
         margin-top: 0;
         display: flex;
         flex-wrap: wrap;
@@ -404,7 +442,7 @@ body {
     }
 
     .description-block {
-        width: 1120px;
+        width: 100%;
         height: 323px;
         margin-top: 0px;
     }
